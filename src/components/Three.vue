@@ -5,17 +5,17 @@
       :class="{loaded:loaded}" />
 
     <div id="menu">
-      <button id="grid">
-        GRID
-      </button>
       <button id="sphere">
         SPHERE
       </button>
       <!--button id="helix">
         ART
       </button-->
-      <button id="table">
+      <button id="helix">
         HELIX
+      </button>
+      <button id="grid">
+        GRID
       </button>
     </div>
 
@@ -224,7 +224,7 @@
         }
 
         this.camera = new THREE.PerspectiveCamera(60, container.clientWidth/container.clientHeight, 1, 1500)
-        this.camera.position.set(0,150,900)
+        this.camera.position.set(0,100,900)
 
         this.scene = new THREE.Scene()
         this.scene.background = new THREE.Color(0x0b0b0b)
@@ -425,7 +425,7 @@
 
         //
 
-        const buttonTable = document.getElementById( 'table' )
+        const buttonTable = document.getElementById( 'helix' )
         buttonTable.addEventListener( 'click', () => {
 
           this.transform( 'MATERIALS', this.targets.sinStar, 2000 )
@@ -456,7 +456,7 @@
 
 
         setTimeout( () => {
-          this.transform( 'CONTACT', this.targets.grid, 2000 )
+          this.transform( 'PROJECTS', this.targets.sphere, 2000 )
         }, 2500)
 
         setTimeout( () => {
@@ -596,8 +596,6 @@
 
       },
       startAnimation () {
-        this.scene.rotation.y += Math.PI / 4
-        this.laptop.rotation.y -= Math.PI / 4
         this.animate()
         this.renderer.render(this.scene, this.camera)
       }
