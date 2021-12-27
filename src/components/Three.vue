@@ -5,6 +5,9 @@
       :class="{loaded:loaded}" />
 
     <div id="menu">
+      <button id="grid">
+        GRID
+      </button>
       <button id="sphere">
         SPHERE
       </button>
@@ -13,9 +16,6 @@
       </button-->
       <button id="table">
         HELIX
-      </button>
-      <button id="grid">
-        GRID
       </button>
     </div>
 
