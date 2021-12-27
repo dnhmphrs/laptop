@@ -414,7 +414,7 @@
 
           const object = new THREE.Object3D()
 
-          let o = (i==62) ? 63 : i // to account for 25 being where the laptop is
+          let o = (i==62) ? 63 : i // to account for 62 being where the laptop is
           object.position.x = ( ( o % 5 ) * 400 ) - 800
           object.position.z = ( - ( Math.floor( o / 5 ) % 5 ) * 400 ) + 800
           object.position.y = ( Math.floor( o / 25 ) ) * 400 - 800
