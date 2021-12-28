@@ -466,10 +466,6 @@
           // this.toneLight.intensity = 8
         }, 6000)
 
-        setTimeout( () => {
-          this.transform( 'MATERIALS', this.targets.helix, 2000 )
-        }, 12000)
-
 
 
       },
