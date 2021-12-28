@@ -180,7 +180,7 @@
           'Og', 'Oganesson', '(294)', 18, 7
         ],
         objects: [],
-        targets: { table: [], sphere: [], helix: [], grid: [], sinStar: [], cosStar: [] },
+        targets: { table: [], sphere: [], helix: [], grid: [], spiral: [] },
         selection: 'INIT',
         isTransition: false
       }
@@ -270,7 +270,7 @@
         this.hemiLight.position.set( 0, 10000, 0 )
         this.scene.add( this.hemiLight )
 
-        this.toneLight = new THREE.PointLight( 0x00ffff, 8, 5000 )
+        this.toneLight = new THREE.PointLight( 0x00ffff, 10, 5000 )
         this.toneLight.position.set( 0, -100, 0 )
         this.scene.add( this.toneLight )
 
@@ -356,7 +356,7 @@
 
         // cosStar (contact)
 
-        for ( let i = 0, l = this.objects.length; i < l; i ++ ) {
+        /*for ( let i = 0, l = this.objects.length; i < l; i ++ ) {
 
           const phi = Math.acos( - 1 + ( 2 * i ) / l )
           const theta = Math.sqrt( l * Math.PI ) * phi
@@ -368,9 +368,9 @@
 
           this.targets.cosStar.push( object )
 
-        }
+        }*/
 
-        // sinStar (materials)
+        // helix (materials)
 
         for ( let i = 0, l = this.objects.length; i < l; i ++ ) {
 
@@ -382,12 +382,12 @@
 
           object.position.setFromSphericalCoords( radius, phi, theta )
 
-          this.targets.sinStar.push( object )
+          this.targets.helix.push( object )
 
         }
 
 
-        // helix (art)
+        // spiral (art)
 
         for ( let i = 0, l = this.objects.length; i < l; i ++ ) {
 
@@ -404,7 +404,7 @@
 
           object.lookAt( vector )
 
-          this.targets.helix.push( object )
+          this.targets.spiral.push( object )
 
         }
 
@@ -428,7 +428,7 @@
         const buttonTable = document.getElementById( 'helix' )
         buttonTable.addEventListener( 'click', () => {
 
-          this.transform( 'MATERIALS', this.targets.sinStar, 2000 )
+          this.transform( 'MATERIALS', this.targets.helix, 2000 )
 
         } )
 
@@ -463,8 +463,12 @@
           // this.camera.position.set(0,0,800)
           this.camera.updateProjectionMatrix()
           this.controls.enabled = true
-          this.toneLight.intensity = 8
+          // this.toneLight.intensity = 8
         }, 6000)
+
+        setTimeout( () => {
+          this.transform( 'MATERIALS', this.targets.helix, 2000 )
+        }, 12000)
 
 
 
