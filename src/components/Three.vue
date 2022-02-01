@@ -233,6 +233,10 @@
 
         // ---------------------------------------------------------------------
 
+        // AUDIO
+
+        this.audioContext = new AudioContext()
+
         // ---------------------------------------------------------------------
 
 
@@ -466,8 +470,6 @@
           // this.toneLight.intensity = 8
         }, 6000)
 
-
-
       },
       transform ( selection, targets, duration ) {
 
@@ -519,6 +521,12 @@
         let noise = tooloud.Simplex.noise(time,time,time) * 0.5
         this.toneLight.intensity += noise / 2
 
+        /* var o = this.audioContext.createOscillator()
+        var frequency = 340.0 * noise
+        o.frequency.value = frequency
+        o.connect(this.audioContext.destination)
+        o.start() */
+
         if (!this.isTransition) {
 
           if (this.selection === 'INIT') {
@@ -531,6 +539,7 @@
               let y = Math.sin(this.objects[i].position.y + time)
               let z = Math.sin(this.objects[i].position.z + time)
               let noise = tooloud.Perlin.noise(x,y,z) * 0.01
+              
 
               this.objects[i].rotation.x += 0.001 * (i % 5 ) - (i % 25) * 0.0002
               this.objects[i].rotation.y += noise
@@ -592,7 +601,7 @@
 
         this.renderer.render( this.scene, this.camera )
 
-        this.controls.handleResize()
+        // this.controls.handleResize()
 
       },
       startAnimation () {
