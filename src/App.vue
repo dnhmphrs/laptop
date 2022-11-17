@@ -139,8 +139,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
-  height: 1px;
+  width: 0px;
+  height: 0px;
 }
 
 /* Track */
