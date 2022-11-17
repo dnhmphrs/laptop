@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 <style>
 
 .loader {
-	color: #f0f0f025;
+	color: #00ffff80;
   font-size: 12px;
   margin: 100px auto;
   width: 1em;
