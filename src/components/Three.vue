@@ -308,7 +308,7 @@
         // table (materials)
 
         let cubeGeometry = new THREE.BoxGeometry(100, 100, 100)
-        let cubeMaterial = new THREE.MeshLambertMaterial({color: 0x111111})
+        let cubeMaterial = new THREE.MeshLambertMaterial({color: 0x0b0b0b})
 
         for ( let i = 0, l = this.table.length; i < l; i += 5 ) {
 
@@ -461,14 +461,14 @@
 
         setTimeout( () => {
           this.transform( 'PROJECTS', this.targets.sphere, 2000 )
-        }, 2500)
+        }, 4000)
 
         setTimeout( () => {
           // this.camera.position.set(0,0,800)
           this.camera.updateProjectionMatrix()
           this.controls.enabled = true
           // this.toneLight.intensity = 8
-        }, 10000)
+        }, 6000)
 
       },
       transform ( selection, targets, duration ) {
