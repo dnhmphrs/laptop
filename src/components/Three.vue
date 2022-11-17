@@ -468,7 +468,7 @@
           this.camera.updateProjectionMatrix()
           this.controls.enabled = true
           // this.toneLight.intensity = 8
-        }, 6000)
+        }, 10000)
 
       },
       transform ( selection, targets, duration ) {
